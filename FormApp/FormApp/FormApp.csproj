@@ -73,6 +73,14 @@
   <ItemGroup>
     <Compile Include="ContextData\Donanım.cs" />
     <Compile Include="ContextData\DbContextApp.cs" />
+    <Compile Include="Migrations\202302102003060_TableAdd.cs" />
+    <Compile Include="Migrations\202302102003060_TableAdd.designer.cs">
+      <DependentUpon>202302102003060_TableAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302102024253_dropColumn.cs" />
+    <Compile Include="Migrations\202302102024253_dropColumn.designer.cs">
+      <DependentUpon>202302102024253_dropColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DonanımModel.cs" />
     <Compile Include="Program.cs" />
@@ -83,6 +91,12 @@
     <Compile Include="View\DonanımForm.Designer.cs">
       <DependentUpon>DonanımForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Migrations\202302102003060_TableAdd.resx">
+      <DependentUpon>202302102003060_TableAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302102024253_dropColumn.resx">
+      <DependentUpon>202302102024253_dropColumn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

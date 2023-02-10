@@ -29,7 +29,7 @@ namespace FormApp.View
         {
             dataGrid.DataSource = dbContext.Donanım.ToList();
         }
-        private void Save(Donanım donanım, string Marka="", string Model="", string SeriNo="", string Kategori="", string ArizaAciklama="", bool Modife=false, bool Deleted=false)
+        private void Save(Donanım donanım, bool Deleted = false, string Marka = "", string Model = "", string SeriNo = "", string Kategori = "", string ArizaAciklama = "", bool Modife = false)
         {
             if (Deleted)
             {
@@ -48,6 +48,7 @@ namespace FormApp.View
                     Status = true,
                     Modife = Modife,
                     CreateDate = System.DateTime.Now
+
                 };
                 dbContext.Donanım.Add(donanım);
             }
@@ -61,7 +62,6 @@ namespace FormApp.View
                 donanım.Deleted = false;
                 donanım.Status = true;
                 donanım.Modife = Modife;
-                donanım.ModifeDate = System.DateTime.Now;
 
             }
             dbContext.SaveChanges();
@@ -73,7 +73,7 @@ namespace FormApp.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save(new Donanım(), txtMarka.Text, txtModel.Text, txtSeriNo.Text, txtKategori.Text, txtAciklama.Text, false, false);
+            Save(new Donanım(), false, txtMarka.Text, txtModel.Text, txtSeriNo.Text, txtKategori.Text, txtAciklama.Text, false);
         }
         private void Clear()
         {
@@ -98,7 +98,7 @@ namespace FormApp.View
         {
             int id = Convert.ToInt32(ID);
             var donanim = dbContext.Donanım.FirstOrDefault(x => x.ID == id);
-            Save(donanim, txtMarka.Text, txtModel.Text, txtSeriNo.Text, txtKategori.Text, txtAciklama.Text, true, false);
+            Save(donanim, false, txtMarka.Text, txtModel.Text, txtSeriNo.Text, txtKategori.Text, txtAciklama.Text, true);
 
         }
 
@@ -106,7 +106,7 @@ namespace FormApp.View
         {
             int id = Convert.ToInt32(ID);
             var donanim = dbContext.Donanım.FirstOrDefault(x => x.ID == id);
-            Save(donanim);
+            Save(donanim,true);
 
 
         }

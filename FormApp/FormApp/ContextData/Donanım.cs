@@ -17,9 +17,7 @@ namespace FormApp.ContextData
         public bool Status { get; set; }
         public bool Deleted { get; set; }
         public bool Modife { get; set; }
-        public DateTime CreateDate { get; set; }
-        public DateTime DeleteDate { get; set; }
-        public DateTime ModifeDate { get; set; }
+        public DateTime CreateDate { get; set; } 
 
     }
 }
