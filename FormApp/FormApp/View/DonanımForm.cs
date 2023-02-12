@@ -34,7 +34,7 @@ namespace FormApp.View
             if (Deleted)
             {
                 //dbContext.Donanım.Remove(donanım);
-                donanım.Deleted= true;
+                donanım.Deleted = true;
             }
             else if (!Modife)
             {
@@ -75,20 +75,18 @@ namespace FormApp.View
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!ValidateChildren(ValidationConstraints.Enabled))
-            {
                 MessageBox.Show("Eksik Alanları Kontrol Ediniz.", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             else
                 Save(new Donanım(), false, txtMarka.Text, txtModel.Text, txtSeriNo.Text, txtKategori.Text, txtAciklama.Text, false);
-            
-               
+
+
         }
         private void Clear()
         {
             foreach (Control i in Controls)
             {
                 if (i is TextBox)
-                { 
+                {
                     i.Text = "";
                     i.CausesValidation = false;
                 }
@@ -110,7 +108,7 @@ namespace FormApp.View
             int id = Convert.ToInt32(ID);
             var donanim = dbContext.Donanım.FirstOrDefault(x => x.ID == id);
             Save(donanim, false, txtMarka.Text, txtModel.Text, txtSeriNo.Text, txtKategori.Text, txtAciklama.Text, true);
-      
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -118,7 +116,7 @@ namespace FormApp.View
             int id = Convert.ToInt32(ID);
             var donanim = dbContext.Donanım.FirstOrDefault(x => x.ID == id);
             Save(donanim, true);
-        } 
+        }
 
         private void txtMarka_Validating(object sender, CancelEventArgs e)
         {
