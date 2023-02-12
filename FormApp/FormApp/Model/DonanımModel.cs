@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FormApp.Model
 {
@@ -18,7 +14,5 @@ namespace FormApp.Model
         public bool Deleted { get; set; }
         public bool Modife { get; set; }
         public DateTime CreateDate { get; set; }
-        public DateTime DeleteDate { get; set; }
-        public DateTime ModifeDate { get; set; }
     }
 }

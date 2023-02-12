@@ -29,6 +29,7 @@ namespace FormApp.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,104 +44,124 @@ namespace FormApp.View
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 53);
+            this.label1.Location = new System.Drawing.Point(871, 84);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 17);
+            this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Marka:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 88);
+            this.label2.Location = new System.Drawing.Point(62, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Model:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 129);
+            this.label3.Location = new System.Drawing.Point(240, 81);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 17);
+            this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Seri No:";
             // 
             // dataGrid
             // 
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Location = new System.Drawing.Point(90, 336);
+            this.dataGrid.Location = new System.Drawing.Point(22, 209);
+            this.dataGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersWidth = 51;
-            this.dataGrid.Size = new System.Drawing.Size(1195, 377);
+            this.dataGrid.Size = new System.Drawing.Size(1055, 303);
             this.dataGrid.TabIndex = 4;
             this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(60, 192);
+            this.label4.Location = new System.Drawing.Point(653, 81);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Açıklama:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(63, 161);
+            this.label5.Location = new System.Drawing.Point(460, 81);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 17);
+            this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "Kategori:";
             // 
             // txtMarka
             // 
-            this.txtMarka.Location = new System.Drawing.Point(178, 53);
+            this.txtMarka.Location = new System.Drawing.Point(927, 81);
+            this.txtMarka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMarka.Name = "txtMarka";
-            this.txtMarka.Size = new System.Drawing.Size(131, 22);
+            this.txtMarka.Size = new System.Drawing.Size(99, 20);
             this.txtMarka.TabIndex = 7;
+            this.txtMarka.Validating += new System.ComponentModel.CancelEventHandler(this.txtMarka_Validating);
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(178, 187);
+            this.txtAciklama.Location = new System.Drawing.Point(722, 78);
+            this.txtAciklama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(131, 22);
+            this.txtAciklama.Size = new System.Drawing.Size(99, 20);
             this.txtAciklama.TabIndex = 8;
+            this.txtAciklama.Validating += new System.ComponentModel.CancelEventHandler(this.txtAciklama_Validating);
             // 
             // txtKategori
             // 
-            this.txtKategori.Location = new System.Drawing.Point(178, 156);
+            this.txtKategori.Location = new System.Drawing.Point(522, 78);
+            this.txtKategori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtKategori.Name = "txtKategori";
-            this.txtKategori.Size = new System.Drawing.Size(131, 22);
+            this.txtKategori.Size = new System.Drawing.Size(99, 20);
             this.txtKategori.TabIndex = 9;
+            this.txtKategori.Validating += new System.ComponentModel.CancelEventHandler(this.txtKategori_Validating);
             // 
             // txtSeriNo
             // 
-            this.txtSeriNo.Location = new System.Drawing.Point(178, 124);
+            this.txtSeriNo.Location = new System.Drawing.Point(301, 78);
+            this.txtSeriNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSeriNo.Name = "txtSeriNo";
-            this.txtSeriNo.Size = new System.Drawing.Size(131, 22);
+            this.txtSeriNo.Size = new System.Drawing.Size(99, 20);
             this.txtSeriNo.TabIndex = 10;
+            this.txtSeriNo.Validating += new System.ComponentModel.CancelEventHandler(this.txtSeriNo_Validating);
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(178, 88);
+            this.txtModel.Location = new System.Drawing.Point(114, 75);
+            this.txtModel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(131, 22);
+            this.txtModel.Size = new System.Drawing.Size(99, 20);
             this.txtModel.TabIndex = 11;
+            this.txtModel.Validating += new System.ComponentModel.CancelEventHandler(this.txtModel_Validating);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(422, 62);
+            this.btnSave.Location = new System.Drawing.Point(186, 173);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(187, 26);
+            this.btnSave.Size = new System.Drawing.Size(140, 21);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Ekle";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -148,9 +169,10 @@ namespace FormApp.View
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(422, 183);
+            this.btnDelete.Location = new System.Drawing.Point(637, 173);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(187, 26);
+            this.btnDelete.Size = new System.Drawing.Size(140, 21);
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -158,19 +180,35 @@ namespace FormApp.View
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(422, 122);
+            this.btnEdit.Location = new System.Drawing.Point(415, 173);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(187, 26);
+            this.btnEdit.Size = new System.Drawing.Size(140, 21);
             this.btnEdit.TabIndex = 14;
             this.btnEdit.Text = "Güncelle";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(269, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(486, 33);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "DONANIM TAKİP OTOMASYONU";
+            // 
             // DonanımForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 737);
+            this.ClientSize = new System.Drawing.Size(1082, 526);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
@@ -185,10 +223,12 @@ namespace FormApp.View
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DonanımForm";
             this.Text = "Donanım";
             this.Load += new System.EventHandler(this.Donanım_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +250,7 @@ namespace FormApp.View
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label6;
     }
 }
