@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace FormApp.View
 {
-    public partial class DonanımForm : Form
+    public partial class DonanimForm : Form
     {
         DbContextApp dbContext = new DbContextApp();
         string ID = "0";
-        public DonanımForm()
+        public DonanimForm()
         {
             InitializeComponent();
         }

@@ -16,7 +16,7 @@ namespace FormApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new View.DonanımForm());
+            Application.Run(new View.DonanimForm());
         }
     }
 }
