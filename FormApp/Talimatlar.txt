@@ -1,0 +1,8 @@
+Proje kurulumu için;
+
+Mssql server localde kurulu olmasý gerekmektedir. 
+Code First Migrations Ýþlemi ile DB kurulumu gerçekleþir. 
+
+DB:DonanýmCodeFirst
+
+connectionStrings: <add name="DbContextApp" connectionString="Server=.\SqlExpress; Database=DonanýmCodeFirst;Trusted_Connection=true" providerName="System.Data.SqlClient"/>

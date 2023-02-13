@@ -165,35 +165,39 @@ namespace FormApp.View
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(104, 30);
+            this.btnSave.BackColor = System.Drawing.Color.Lime;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSave.Location = new System.Drawing.Point(60, 16);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(140, 21);
+            this.btnSave.Size = new System.Drawing.Size(175, 36);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Ekle";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(104, 113);
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.Location = new System.Drawing.Point(60, 99);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(140, 21);
-            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Size = new System.Drawing.Size(175, 36);
+            this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "Sil";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(104, 70);
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEdit.Location = new System.Drawing.Point(60, 56);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(140, 21);
-            this.btnEdit.TabIndex = 14;
+            this.btnEdit.Size = new System.Drawing.Size(175, 36);
+            this.btnEdit.TabIndex = 12;
             this.btnEdit.Text = "Güncelle";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // errorProvider1
@@ -246,22 +250,24 @@ namespace FormApp.View
             // checkBoxDelt
             // 
             this.checkBoxDelt.AutoSize = true;
-            this.checkBoxDelt.Location = new System.Drawing.Point(244, 157);
+            this.checkBoxDelt.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.checkBoxDelt.Location = new System.Drawing.Point(240, 150);
             this.checkBoxDelt.Name = "checkBoxDelt";
             this.checkBoxDelt.Size = new System.Drawing.Size(63, 17);
             this.checkBoxDelt.TabIndex = 15;
             this.checkBoxDelt.Text = "Deleted";
-            this.checkBoxDelt.UseVisualStyleBackColor = true;
+            this.checkBoxDelt.UseVisualStyleBackColor = false;
             // 
             // btnListele
             // 
-            this.btnListele.Location = new System.Drawing.Point(104, 153);
+            this.btnListele.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnListele.Location = new System.Drawing.Point(60, 139);
             this.btnListele.Margin = new System.Windows.Forms.Padding(2);
             this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(140, 21);
-            this.btnListele.TabIndex = 16;
+            this.btnListele.Size = new System.Drawing.Size(175, 36);
+            this.btnListele.TabIndex = 12;
             this.btnListele.Text = "Listele";
-            this.btnListele.UseVisualStyleBackColor = true;
+            this.btnListele.UseVisualStyleBackColor = false;
             this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
             // 
             // DonanimForm
@@ -274,6 +280,7 @@ namespace FormApp.View
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGrid);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "DonanimForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Donanım";
