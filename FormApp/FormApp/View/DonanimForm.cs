@@ -1,5 +1,4 @@
 ﻿using FormApp.ContextData;
-using FormApp.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,6 +68,7 @@ namespace FormApp.View
             MessageBox.Show("Başarılı", "Kayıt", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Clear();
             List();
+            CausesValidations();
 
         }
 
@@ -77,7 +77,14 @@ namespace FormApp.View
             if (!ValidateChildren(ValidationConstraints.Enabled))
                 MessageBox.Show("Eksik Alanları Kontrol Ediniz.", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-                Save(new Donanım(), false, txtMarka.Text, txtModel.Text, txtSeriNo.Text, txtKategori.Text, txtAciklama.Text, false);
+            {
+                var mi = dbContext.Donanım.FirstOrDefault(x=>x.Marka == txtMarka.Text && x.Model == txtModel.Text && x.SeriNo == txtSeriNo.Text && x.Kategori == txtKategori.Text && x.ArizaAciklama == txtAciklama.Text);
+                if (mi is null)
+                    Save(new Donanım(), false, txtMarka.Text, txtModel.Text, txtSeriNo.Text, txtKategori.Text, txtAciklama.Text, false);
+                else
+                    MessageBox.Show("Aynı Kayıt Mevcut", "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
 
 
         }
@@ -89,10 +96,21 @@ namespace FormApp.View
                 {
                     i.Text = "";
                     i.CausesValidation = false;
+
                 }
             }
         }
+        private void CausesValidations()
+        {
+            foreach (Control i in Controls)
+            {
+                if (i is TextBox)
+                {
+                    i.CausesValidation = true;
 
+                }
+            }
+        }
         private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ID = dataGrid.CurrentRow.Cells[0].Value.ToString();
@@ -107,7 +125,10 @@ namespace FormApp.View
         {
             int id = Convert.ToInt32(ID);
             var donanim = dbContext.Donanım.FirstOrDefault(x => x.ID == id);
-            Save(donanim, false, txtMarka.Text, txtModel.Text, txtSeriNo.Text, txtKategori.Text, txtAciklama.Text, true);
+            if (donanim is null)
+                MessageBox.Show("Lütfen Seçim Yapınız", "Silme", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+                Save(donanim, false, txtMarka.Text, txtModel.Text, txtSeriNo.Text, txtKategori.Text, txtAciklama.Text, true);
 
         }
 
@@ -115,9 +136,15 @@ namespace FormApp.View
         {
             int id = Convert.ToInt32(ID);
             var donanim = dbContext.Donanım.FirstOrDefault(x => x.ID == id);
-            Save(donanim, true);
+            if (donanim is null)
+                MessageBox.Show("Lütfen Seçim Yapınız", "Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            else
+                Save(donanim, true);
         }
-
+        private void btnListele_Click(object sender, EventArgs e)
+        {
+            dataGrid.DataSource = dbContext.Donanım.Where(x => x.Deleted == checkBoxDelt.Checked).ToList();
+        }
         private void txtMarka_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtMarka.Text))
@@ -198,5 +225,6 @@ namespace FormApp.View
 
 
         }
+
     }
 }
