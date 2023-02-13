@@ -1,7 +1,7 @@
 ﻿
 namespace FormApp.View
 {
-    partial class DonanımForm
+    partial class DonanimForm
     {
         /// <summary>
         /// Required designer variable.
